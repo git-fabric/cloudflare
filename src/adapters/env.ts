@@ -4,18 +4,10 @@
  * Optional: CLOUDFLARE_ACCOUNT_ID
  */
 
-const CF_API = 'https://api.cloudflare.com/client/v4';
+import type { CloudflareAdapter } from '../types.js';
+export type { CloudflareAdapter } from '../types.js';
 
-export interface CloudflareAdapter {
-  accountId: string | undefined;
-  get(path: string, params?: Record<string, unknown>): Promise<unknown>;
-  post(path: string, body?: unknown): Promise<unknown>;
-  put(path: string, body?: unknown): Promise<unknown>;
-  delete(path: string): Promise<unknown>;
-  getRaw(url: string): Promise<string>;
-  putRaw(url: string, body: string, params?: Record<string, string>): Promise<void>;
-  deleteRaw(url: string): Promise<void>;
-}
+const CF_API = 'https://api.cloudflare.com/client/v4';
 
 export function createAdapterFromEnv(): CloudflareAdapter {
   const token = process.env.CLOUDFLARE_API_TOKEN;

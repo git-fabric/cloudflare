@@ -1,8 +1,4 @@
-/**
- * @git-fabric/cloudflare — FabricApp factory
- * 13 tools: zones, DNS, cache, KV, analytics
- */
-import { type CloudflareAdapter } from './adapters/env.js';
+import type { CloudflareAdapter } from './types.js';
 interface FabricTool {
     name: string;
     description: string;
