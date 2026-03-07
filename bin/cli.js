@@ -53,11 +53,11 @@ async function registerWithGateway() {
     tailscale_node: 'fabric-cloudflare',
     worker_pool: { total: 0, healthy: 0, workers: [] },
     routes: [
-      { prefix: 'fabric.cloudflare', local_pref: 100, description: 'Cloudflare infrastructure — DNS, zones, cache, KV, analytics' },
-      { prefix: 'fabric.cloudflare.dns', local_pref: 100, description: 'DNS management — records, DNSSEC, zone transfers' },
-      { prefix: 'fabric.cloudflare.zones', local_pref: 100, description: 'Zone management — domains, settings, analytics' },
-      { prefix: 'fabric.cloudflare.kv', local_pref: 100, description: 'Workers KV — namespaces, keys, values' },
-      { prefix: 'fabric.cloudflare.cache', local_pref: 100, description: 'Cache management — purge, rules, CDN' },
+      { prefix: 'fabric.cloudflare', local_pref: 100, confidence_floor: 0.7, description: 'Cloudflare infrastructure — DNS, zones, cache, KV, analytics' },
+      { prefix: 'fabric.cloudflare.dns', local_pref: 100, confidence_floor: 0.7, description: 'DNS management — records, DNSSEC, zone transfers' },
+      { prefix: 'fabric.cloudflare.zones', local_pref: 100, confidence_floor: 0.7, description: 'Zone management — domains, settings, analytics' },
+      { prefix: 'fabric.cloudflare.kv', local_pref: 100, confidence_floor: 0.7, description: 'Workers KV — namespaces, keys, values' },
+      { prefix: 'fabric.cloudflare.cache', local_pref: 100, confidence_floor: 0.7, description: 'Cache management — purge, rules, CDN' },
     ],
   };
 
